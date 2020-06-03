@@ -1,0 +1,26 @@
+const { AbstractSegment } = require('./abstract-segment');
+
+class RegularSegment extends AbstractSegment {
+  segmentPointer;
+
+  constructor(opts) {
+    super(opts);
+    const {segmentPointer} = opts;
+    this.segmentPointer = segmentPointer;
+  }
+
+  translate() {
+    return `
+      // regular segment
+      @${this.segmentPointer}
+      D=M // save segement pointer
+      @${this.i}  // i constant
+      A=D+A // addr
+      D=M // copy addr*
+    `;
+  }
+}
+
+module.exports = {
+  RegularSegment
+}
