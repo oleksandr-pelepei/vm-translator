@@ -1,7 +1,7 @@
 class AbstractSegment {
   i = null;
 
-  constructor(i) {
+  constructor({ i }) {
     this.i = i;
   }
 }
