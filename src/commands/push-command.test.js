@@ -3,7 +3,7 @@ const { prettifyAssemblyCode } = require('../../tests/utils');
 
 describe('PushCommand', () => {
   it('should be defined', () => {
-    expect(new PushCommand()).toBeDefined();
+    expect(new PushCommand({})).toBeDefined();
   });
 
   describe('Method translate()', () => {

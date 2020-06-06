@@ -26,7 +26,7 @@ describe('PushCommandParser', () => {
 
   describe('Method parse()', () => {
     it('should parse command params and create a command via factory', () => {
-      const createCommandSpy = spyOn(pushCommandsFactory, 'create').and.returnValue(new PushCommand());
+      const createCommandSpy = spyOn(pushCommandsFactory, 'create').and.returnValue(new PushCommand({}));
 
       const command = commandParser.parse('push local 12');
 
