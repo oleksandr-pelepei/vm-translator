@@ -24,7 +24,7 @@ describe('PushCommand', () => {
         // segment memory access code
         @SP
         M=D // *SP = *addr
-        A=A+1 // *SP++`
+        A=A+1 // SP++`
       );
 
       expect(prettifyAssemblyCode(command.translate())).toBe(expectedCode);

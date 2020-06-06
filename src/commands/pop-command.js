@@ -1,11 +1,6 @@
-class PopCommand {
-  constructor(opts) {
-    const {segment, originalCommand} = opts;
+const {StackCommand} = require('./stack-command');
 
-    this.segment = segment;
-    this.originalCommand = originalCommand;
-  }
-
+class PopCommand extends StackCommand {
   translate() {
     return `
       // ${this.originalCommand}
