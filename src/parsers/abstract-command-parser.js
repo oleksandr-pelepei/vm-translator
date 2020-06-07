@@ -1,4 +1,4 @@
-class AbstractCommandParse {
+class AbstractCommandParser {
   /**
    * @abstract
    *
@@ -12,5 +12,5 @@ class AbstractCommandParse {
 }
 
 module.exports = {
-  AbstractCommandParse
+  AbstractCommandParser: AbstractCommandParser
 }

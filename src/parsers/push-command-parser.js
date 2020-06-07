@@ -1,6 +1,6 @@
-const { AbstractCommandParse } = require('./abstract-command-parse');
+const { AbstractCommandParser } = require('./abstract-command-parser');
 
-class PushCommandParser extends AbstractCommandParse {
+class PushCommandParser extends AbstractCommandParser {
   static regexp = /^push\s(\w+)\s(\d+)$/;
 
   constructor(pushCommandFactory) {
