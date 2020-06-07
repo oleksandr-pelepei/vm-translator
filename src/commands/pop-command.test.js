@@ -10,14 +10,19 @@ describe('PopCommand', () => {
     it('should translate command into the assembly code', () => {
       const expectedCode = prettifyAssemblyCode(`
         // pop local 7
-        // segment memory access code
+        // D = addr
+        @tmp
+        M=D // *tmp = addr
         @SP
-        A=A+1 // SP--
-        M=D // *SP = *addr
+        A=A-1 // SP--
+        D=M // D = *SP
+        @tmp
+        A=M // A = addr
+        M=D // *addr = *SP
       `);
       const segment = {
         translate() {
-          return '// segment memory access code';
+          return '// D = addr';
         }
       };
       const originalCommand = 'pop local 7';

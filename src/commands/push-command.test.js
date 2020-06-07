@@ -10,7 +10,7 @@ describe('PushCommand', () => {
     it('should translate into assembly code', () => {
       const segment = {
         translate() {
-          return '// segment memory access code';
+          return '// D = addr';
         }
       };
       const originalCommand = 'push constant 12';
@@ -21,11 +21,13 @@ describe('PushCommand', () => {
 
       const expectedCode = prettifyAssemblyCode(`
         // push constant 12
-        // segment memory access code
+        // D = addr
+        A=D
+        D=M // *addr
         @SP
         M=D // *SP = *addr
-        A=A+1 // SP++`
-      );
+        A=A+1 // SP++
+      `);
 
       expect(prettifyAssemblyCode(command.translate())).toBe(expectedCode);
     });

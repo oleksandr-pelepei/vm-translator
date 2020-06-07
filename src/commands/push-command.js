@@ -5,6 +5,8 @@ class PushCommand extends StackCommand {
     return `
       // ${this.originalCommand}
       ${this.segment.translate()}
+      A=D
+      D=M // *addr
       @SP
       M=D // *SP = *addr
       A=A+1 // SP++

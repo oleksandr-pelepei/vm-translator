@@ -13,7 +13,7 @@ class StaticSegment extends AbstractSegment {
   translate() {
     return `
         @${this.className}.${this.i}
-        D=M 
+        D=A // save addr of static value to D register
     `;
   }
 }

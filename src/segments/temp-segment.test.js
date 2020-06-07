@@ -11,7 +11,7 @@ describe('TempSegment', () => {
       const segment = new TempSegment({i: 3});
       const expectedCode = prettifyAssemblyCode(`
         @8
-        D=M // save temp value to D register
+        D=A // save addr to D register
       `);
 
       expect(prettifyAssemblyCode(segment.translate())).toBe(expectedCode);

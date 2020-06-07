@@ -17,8 +17,7 @@ describe('RegularSegment', () => {
         @LCL 
         D=M // save segement pointer
         @15  // i constant
-        A=D+A // addr
-        D=M // copy addr*
+        D=D+A // addr
       `);
 
       expect(prettifyAssemblyCode(segment.translate())).toBe(expectedCode);

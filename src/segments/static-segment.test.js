@@ -11,7 +11,7 @@ describe('StaticSegment', () => {
       const segment = new StaticSegment({ i: 3, className: 'Some' });
       const expectedCode = prettifyAssemblyCode(`
         @Some.3
-        D=M 
+        D=A // save addr of static value to D register
       `);
 
       expect(prettifyAssemblyCode(segment.translate())).toBe(expectedCode);

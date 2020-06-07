@@ -15,8 +15,7 @@ class RegularSegment extends AbstractSegment {
       @${this.segmentPointer}
       D=M // save segement pointer
       @${this.i}  // i constant
-      A=D+A // addr
-      D=M // copy addr*
+      D=D+A // addr
     `;
   }
 }
