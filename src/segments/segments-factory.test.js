@@ -1,6 +1,7 @@
 const {SegmentsFactory} = require('./segments-factory');
 const {StaticSegment} = require('./static-segment');
 const {ConstantSegment} = require('./constant-segment');
+const {PointerSegment} = require('./pointer-segment');
 const {RegularSegment} = require('./regular-segment');
 
 describe('SegmentsFactory', () => {
@@ -40,6 +41,17 @@ describe('SegmentsFactory', () => {
       expect(segment).toBeInstanceOf(StaticSegment);
       expect(segment.i).toBe(i);
       expect(segment.className).toBe(context);
+    });
+
+    it('should return a PointerSegment for "pointer" key', () => {
+      const i = 0;
+      const segment = segmentsFactory.create({
+        segment: 'pointer',
+        i
+      });
+
+      expect(segment).toBeInstanceOf(PointerSegment);
+      expect(segment.i).toBe(i);
     });
 
     it('should return a RegularSegment for another segments keys', () => {
