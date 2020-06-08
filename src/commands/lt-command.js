@@ -3,6 +3,8 @@ const {ArithmeticCommand} = require('./arithmetic-command');
 class LtCommand extends ArithmeticCommand {
   static counter = 0;
 
+  operation = 'lt';
+
   constructor() {
     super();
 
