@@ -25,8 +25,10 @@ describe('PushCommand', () => {
         A=D
         D=M // *addr
         @SP
+        A=M
         M=D // *SP = *addr
-        A=A+1 // SP++
+        @SP
+        M=M+1 // SP++
       `);
 
       expect(prettifyAssemblyCode(command.translate())).toBe(expectedCode);

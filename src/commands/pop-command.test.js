@@ -11,13 +11,14 @@ describe('PopCommand', () => {
       const expectedCode = prettifyAssemblyCode(`
         // pop local 7
         // D = addr
-        @tmp
-        M=D // *tmp = addr
+        @addr
+        M=D
         @SP
-        A=A-1 // SP--
+        A=M
+        M=M-1 // SP--
         D=M // D = *SP
-        @tmp
-        A=M // A = addr
+        @addr
+        A=M
         M=D // *addr = *SP
       `);
       const segment = {

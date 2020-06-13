@@ -5,13 +5,14 @@ class PopCommand extends StackCommand {
     return `
       // ${this.originalCommand}
       ${this.segment.translate()}
-      @tmp
-      M=D // *tmp = addr
+      @addr
+      M=D
       @SP
-      A=A-1 // SP--
+      A=M
+      M=M-1 // SP--
       D=M // D = *SP
-      @tmp
-      A=M // A = addr
+      @addr
+      A=M
       M=D // *addr = *SP
     `;
   }
