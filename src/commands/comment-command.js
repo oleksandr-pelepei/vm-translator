@@ -1,10 +1,10 @@
-const {AbstractCommand} = require('./abstract-command');
-
-class CommentCommand extends AbstractCommand {
-  static regexp = /^\/\/.*$/;
+class CommentCommand {
+  constructor(text) {
+    this.text = text;
+  }
 
   translate() {
-    return '';
+    return `// ${this.text}`;
   }
 }
 
