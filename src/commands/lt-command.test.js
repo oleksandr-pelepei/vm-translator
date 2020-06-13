@@ -14,12 +14,12 @@ describe('LtCommand', () => {
         D=M-D // D = *x - *y
         
         @LT_ELSE_${counter}
-        D=D;JGT // *x < *y
+        D=D;JGE // *x < *y
         
         @SP
         A=M 
         A=A-1 // x
-        M=1 // *x = *x < *y = true
+        M=-1 // *x = *x < *y = true
         
         @LT_END_${counter}
         0;JMP

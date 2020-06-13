@@ -1,10 +1,18 @@
-const {ArithmeticCommand} = require('./arithmetic-command');
-
-class NotCommand extends ArithmeticCommand {
+class NotCommand {
   operation = 'not';
 
-  getOperationCode() {
-    return 'M=!M // *x = !*x';
+  constructor() {
+    NotCommand.count++;
+  }
+
+  translate() {
+    return `
+      // ${this.operation}
+      @SP
+      A=M
+      A=A-1
+      M=!M
+    `;
   }
 }
 

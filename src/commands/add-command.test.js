@@ -12,12 +12,10 @@ describe('AddCommand', () => {
       const exactedCode = prettifyAssemblyCode(`
         // add
         @SP
-        M=M-1 // y
+        M=M-1 // SP--
         A=M
         D=M // D = *y
-        @SP
-        A=M 
-        A=A-1 // x
+        A=A-1 // x = SP-2
         M=M+D // *x = *x + *y 
       `);
 

@@ -22,10 +22,10 @@ class GtCommand extends ArithmeticCommand {
       D=M-D // D = *x - *y
         
       @GT_ELSE_${GtCommand.counter}
-      D=D;JLT // *x > *y
+      D=D;JLE // *x > *y
       
       ${pointerXCode}
-      M=1 // *x = *x > *y = true
+      M=-1 // *x = *x > *y = true
       
       @GT_END_${GtCommand.counter}
       0;JMP

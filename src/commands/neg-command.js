@@ -1,10 +1,14 @@
-const {ArithmeticCommand} = require('./arithmetic-command');
-
-class NegCommand extends ArithmeticCommand {
+class NegCommand {
   operation = 'neg';
 
-  getOperationCode() {
-    return 'M=-D // *x = -*y'
+  translate() {
+    return `
+      // ${this.operation}
+      @SP
+      A=M
+      A=A-1
+      M=-M // *y = -*y
+    `;
   }
 }
 

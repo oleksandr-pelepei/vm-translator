@@ -14,12 +14,12 @@ describe('GtCommand', () => {
         D=M-D // D = *x - *y
         
         @GT_ELSE_${counter}
-        D=D;JLT // *x > *y
+        D=D;JLE // *x > *y
         
         @SP
         A=M 
         A=A-1 // x
-        M=1 // *x = *x > *y = true
+        M=-1 // *x = *x > *y = true
         
         @GT_END_${counter}
         0;JMP

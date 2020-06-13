@@ -22,10 +22,10 @@ class LtCommand extends ArithmeticCommand {
       D=M-D // D = *x - *y
         
       @LT_ELSE_${LtCommand.counter}
-      D=D;JGT // *x < *y
+      D=D;JGE // *x < *y
       
       ${pointerXCode}
-      M=1 // *x = *x < *y = true
+      M=-1 // *x = *x < *y = true
       
       @LT_END_${LtCommand.counter}
       0;JMP
