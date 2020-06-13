@@ -2,6 +2,7 @@ const {ConstantSegment} = require('./constant-segment');
 const {StaticSegment} = require('./static-segment');
 const {PointerSegment} = require('./pointer-segment');
 const {RegularSegment} = require('./regular-segment');
+const {TempSegment} = require('./temp-segment');
 const {SegmentPointer} = require('./segment-pointer');
 
 class SegmentsFactory {
@@ -21,6 +22,8 @@ class SegmentsFactory {
         return new ConstantSegment({i});
       case 'pointer':
         return new PointerSegment({i});
+      case 'temp':
+        return new TempSegment({i});
       case 'static':
         return new StaticSegment({i, className: this.context});
       default:
