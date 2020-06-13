@@ -12,7 +12,7 @@ class VmTranslator {
       .split(os.EOL)
       .map((command) => command.trim())
       .filter((command) => Boolean(command))
-      .map((command) => this.translateCommand(command))
+      .map((command) => this.translateCommand(command).trim())
       .join(os.EOL);
   }
 
@@ -21,8 +21,9 @@ class VmTranslator {
       return Parser.match(commandCode);
     });
     const parserInstance = this.parsers.get(Parser);
+    const command = parserInstance.parse(commandCode);
 
-    return parserInstance.parse(commandCode).translate();
+    return command.translate();
   }
 }
 
