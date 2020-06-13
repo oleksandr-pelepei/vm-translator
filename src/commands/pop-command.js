@@ -8,8 +8,8 @@ class PopCommand extends StackCommand {
       @addr
       M=D
       @SP
-      A=M
       M=M-1 // SP--
+      A=M
       D=M // D = *SP
       @addr
       A=M

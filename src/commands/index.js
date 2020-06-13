@@ -1,5 +1,6 @@
 module.exports = {
   ...require('./push-command-factory'),
+  ...require('./pop-command-factory'),
   ...require('./arithmetic-command-factory'),
   ...require('./comment-command-factory'),
   ...require('./push-command'),
