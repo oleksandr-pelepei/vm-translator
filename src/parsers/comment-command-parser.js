@@ -1,7 +1,7 @@
 const {AbstractCommandParser} = require('./abstract-command-parser');
 
 class CommentCommandParser extends AbstractCommandParser {
-  static regexp = /^\/\/(.*)$/;
+  static regexp = /^\/\/(.*).*$/;
 
   constructor(commandFactory) {
     super();

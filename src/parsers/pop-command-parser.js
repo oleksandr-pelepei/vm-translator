@@ -1,7 +1,7 @@
 const {AbstractCommandParser} = require('./abstract-command-parser');
 
 class PopCommandParser extends AbstractCommandParser {
-  static regexp = /^pop\s(\w+)\s(\d+)$/;
+  static regexp = /^pop\s(\w+)\s(\d+).*$/;
 
   constructor(popCommandFactory) {
     super();

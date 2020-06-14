@@ -21,6 +21,13 @@ class VmTranslator {
       return Parser.match(commandCode);
     });
     const parserInstance = this.parsers.get(Parser);
+
+    if (!parserInstance) {
+      console.warn(`Could find a parser for command: ${commandCode}`);
+
+      return '';
+    }
+
     const command = parserInstance.parse(commandCode);
 
     return command.translate();

@@ -15,4 +15,7 @@ module.exports = {
   ...require('./lt-command'),
   ...require('./not-command'),
   ...require('./comment-command'),
+  ...require('./label-command'),
+  ...require('./goto-command'),
+  ...require('./if-goto-command')
 };

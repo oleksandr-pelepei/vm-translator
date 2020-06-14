@@ -11,7 +11,10 @@ const {
   PushCommandParser,
   PopCommandParser,
   ArithmeticCommandParser,
-  CommentCommandParser
+  CommentCommandParser,
+  IfGotoParser,
+  LabelParser,
+  GotoParser
 } = require('./parsers');
 const {SegmentsFactory} = require('./segments');
 const {prettifyAssemblyCode} = require('../tests/utils');
@@ -35,12 +38,18 @@ class Main {
     const popCommandParser = new PopCommandParser(popCommandFactory);
     const arithmeticCommandParser = new ArithmeticCommandParser(arithmeticCommandFactory);
     const commentCommandParser = new CommentCommandParser(commentCommandFactory);
+    const ifGotoParser = new IfGotoParser();
+    const gotoParser = new GotoParser();
+    const labelParser = new LabelParser();
 
     const parsers = new Map([
       [PushCommandParser, pushCommandParser],
       [PopCommandParser, popCommandParser],
       [ArithmeticCommandParser, arithmeticCommandParser],
       [CommentCommandParser, commentCommandParser],
+      [IfGotoParser, ifGotoParser],
+      [GotoParser, gotoParser],
+      [LabelParser, labelParser],
     ]);
 
     const translator = new VmTranslator(parsers);

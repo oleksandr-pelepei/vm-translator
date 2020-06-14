@@ -1,7 +1,7 @@
 const {AbstractCommandParser} = require('./abstract-command-parser');
 
 class ArithmeticCommandParser extends AbstractCommandParser {
-  static regexp = /^(add|sub|neg|eq|gt|lt|and|or|not)$/;
+  static regexp = /^(add|sub|neg|eq|gt|lt|and|or|not)\s?.*$/;
 
   constructor(commandFactory) {
     super();
