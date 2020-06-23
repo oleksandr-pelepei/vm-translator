@@ -5,5 +5,8 @@ module.exports = {
   ...require('./comment-command-parser'),
   ...require('./goto-parser'),
   ...require('./if-goto-parser'),
-  ...require('./label-parser')
+  ...require('./label-parser'),
+  ...require('./call-command-parser'),
+  ...require('./function-command-parser'),
+  ...require('./return-command-parser')
 }

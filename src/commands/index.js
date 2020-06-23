@@ -3,6 +3,8 @@ module.exports = {
   ...require('./pop-command-factory'),
   ...require('./arithmetic-command-factory'),
   ...require('./comment-command-factory'),
+  ...require('./call-command-factory'),
+  ...require('./function-command-factory'),
   ...require('./push-command'),
   ...require('./pop-command'),
   ...require('./and-command'),
@@ -17,5 +19,7 @@ module.exports = {
   ...require('./comment-command'),
   ...require('./label-command'),
   ...require('./goto-command'),
-  ...require('./if-goto-command')
+  ...require('./if-goto-command'),
+  ...require('./function-command'),
+  ...require('./return-command')
 };

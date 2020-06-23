@@ -1,5 +1,5 @@
 const prettifyAssemblyCode = (code) => {
-  return code.replace(/((^\s+)|(\s+$))/gm, '').trim();
+  return code.replace(/((^ +)|( +$))/gm, '').trim();
 };
 
 module.exports = {

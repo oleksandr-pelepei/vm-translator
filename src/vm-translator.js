@@ -32,6 +32,18 @@ class VmTranslator {
 
     return command.translate();
   }
+
+  addBootstrapCode(code) {
+    return `
+      // Init SP
+      @256
+      D=A
+      @SP
+      M=D
+      ${this.translate('call Sys.init 0')}
+      ${code}
+    `;
+  }
 }
 
 module.exports = {
